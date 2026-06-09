@@ -29,12 +29,4 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-router.get('/make-admin', async (req, res) => {
-  const r = await User.findOneAndUpdate(
-    {email:'yubrajyadav546@gmail.com'},
-    {role:'admin'},
-    {new:true}
-  );
-  res.json({ role: r?.role });
-});
 module.exports = router;
